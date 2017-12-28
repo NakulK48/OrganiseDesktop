@@ -3,12 +3,10 @@ try:
     from setuptools import setup
 except ImportError:
     from distutils.core import setup
-from codecs import open
-from sys import exit,version
+
 import sys
-if version < '1.0.0':
-    print("Python 1 is not supported...")
-    sys.exit(1)
+if sys.version_info < (2,):
+    sys.exit("Python 1 is not supported...")
 
 with open('README.rst') as f:
     longd = f.read()
